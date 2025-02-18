@@ -1,15 +1,15 @@
-import { useState } from 'react'
-import Canvas from './components/canvas'
-import './assets/css/style.css';
-import MainArea from './ui/mainArea';
+import "./assets/css/style.css";
+import MainArea from "./ui/mainArea";
+import PaintProvider from "./context/PaintContext";
 
 function App() {
-
   return (
     <>
-     <MainArea/>
+      <PaintProvider>
+        <MainArea />
+      </PaintProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

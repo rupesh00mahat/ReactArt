@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { usePaintContext } from "../context/PaintContext";
 
-function Canvas({strokeStyle}) {
+function Canvas() {
   const [isPainting, setPaintingState] = useState(false);
   const [ctx, setCTX] = useState(undefined);
- 
+  const {strokeStyle} = usePaintContext();
 
   useEffect(() => {
     let myCanvas = document.querySelector("canvas");
@@ -13,6 +14,7 @@ function Canvas({strokeStyle}) {
 
   const startDrawing = () => {
     setPaintingState(true);
+    console.log('hello');
   };
   const stopDrawing = () => {
     setPaintingState(false);
@@ -22,6 +24,7 @@ function Canvas({strokeStyle}) {
   const draw = (e) => {
     if (isPainting) {
       const rect = e.target.getBoundingClientRect();
+      console.log('rect', rect);
       ctx.lineWidth = 3;
       ctx.lineCap = "round";
       ctx.strokeStyle = strokeStyle;
@@ -29,6 +32,7 @@ function Canvas({strokeStyle}) {
       ctx.stroke();
       ctx.beginPath();
       ctx.moveTo(e.clientX - rect.left, e.clientY - rect.top);
+      console.log(ctx);
     }
   };
 
@@ -36,13 +40,14 @@ function Canvas({strokeStyle}) {
     <>
       
       <canvas
-        className="bg-white"
+        className="bg-white block h-full w-full rounded-2xl !border-none"
         onMouseMove={draw}
         onMouseDown={startDrawing}
         onMouseUp={stopDrawing}
+        width={'6080px'}
+        height={'1080px'}
         id="my-canvas"
-        width={"500px"}
-        height={"500px"}
+       
       ></canvas>
     </>
   );
