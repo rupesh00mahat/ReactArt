@@ -8,8 +8,10 @@ export const usePaintContext = () =>{
 
 export default function PaintProvider ({children}){
     const [strokeStyle, setStrokeStyle] = useState('#000');
+    const [strokeWidth, setStrokeWidth] = useState(3);
 
-return <PaintContext.Provider value={{strokeStyle, setStrokeStyle}}>
+
+return <PaintContext.Provider value={{strokeStyle, setStrokeStyle, strokeWidth, setStrokeWidth}}>
 {children}
 </PaintContext.Provider>
 }
