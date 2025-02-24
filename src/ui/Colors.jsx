@@ -23,10 +23,10 @@ function Colors() {
     "#FFFFFF", // White
   ];
   return (
-    <div className="colors flex !py-4">
+    <div className="colors !py-4">
       <div
-        style={{ backgroundColor: strokeStyle }}
-        className="h-8 w-8 border-solid border-2 !mr-2"
+        style={{ backgroundColor: strokeStyle, border: '2px solid red' }}
+        className="color h-12  w-12 block  rounded-[50%] border-ridge border-2  !m-2"
       ></div>
       {colors.map((color) => {
         return (
@@ -38,7 +38,7 @@ function Colors() {
             style={{
               backgroundColor: color,
             }}
-            className="color h-8  w-8 border-ridge border-2  shadow-[inset_0_1px_1px_rgba(0,0,0,0.6)]"
+            className="color h-12  w-12 inline-block  rounded-[50%] border-ridge border-2  !m-2"
           ></button>
         );
       })}
