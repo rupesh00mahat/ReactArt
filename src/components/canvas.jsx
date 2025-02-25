@@ -11,15 +11,15 @@ function Canvas() {
   useEffect(() => {
     const myCanvas = canvasRef.current;
     const ctx = myCanvas.getContext("2d");
-    const scale = window.devicePixelRatio;
-
-    myCanvas.width = 1000 * scale;
-    myCanvas.height = 600 * scale;
+    const scale = window.devicePixelRatio || 1;
+    const rect = myCanvas.getBoundingClientRect();
+    myCanvas.width = rect.width * scale;
+    myCanvas.height = rect.height * scale;
     ctx.scale(scale, scale);
     ctx.lineCap = "round";
     ctx.strokeStyle = strokeStyle;
     ctx.fillStyle = "white";
-    ctx.fillRect(0, 0, 1000,600); // Fill entire canvas
+    ctx.fillRect(0, 0, rect.width,rect.height); // Fill entire canvas
     setCTX(ctx);
   }, []);
   useEffect(()=>{
@@ -67,8 +67,8 @@ eraseAtPoint(e.clientX - rect.left, e.clientY - rect.top, 20);
       <canvas
         ref={canvasRef}
         style={{ 
-          width: "1000px",
-           height: "600px",
+          width: "100%",
+           height: "100%",
           cursor: `url(${isErasing? Eraser :Pencil}) 16 16, auto`
           }}
         className="bg-white block h-full w-full rounded-2xl !border-none"

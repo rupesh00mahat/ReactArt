@@ -38,7 +38,7 @@ function Colors() {
             style={{
               backgroundColor: color,
             }}
-            className="color h-12  w-12 inline-block  rounded-[50%] border-ridge border-2  !m-2"
+            className="color h-12  w-12 inline-block  rounded-[50%] border-solid border-1 border-[rgb(173,173,173/0.8)]  !m-2"
           ></button>
         );
       })}

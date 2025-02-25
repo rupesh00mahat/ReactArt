@@ -21,7 +21,7 @@ function Tools() {
         className="p-2  w-full !mt-4 flex !justify-start gap-6"
       >
         <FaPencilAlt size={25} />
-        <Typography fontSize={'16px'} color="#000">Line</Typography>
+        <Typography fontSize={'20px'} fontWeight={200} letterSpacing={1.2} color="#000">Line</Typography>
       </Button>
       <Button
         onClick={() => {
@@ -30,14 +30,14 @@ function Tools() {
         className="p-2  w-full !mt-4 flex !justify-start gap-6"
       >
         <FaEraser size={25} />
-        <Typography fontSize={'16px'} color="#000">Eraser</Typography>
+        <Typography fontSize={'20px'} fontWeight={200} letterSpacing={1.2} color="#000">Eraser</Typography>
 
       </Button>
-      <Typography color="#000" fontSize={"16px"} className="!mt-4">
+      <Typography color="#000" fontSize={"20px"} fontWeight={200} letterSpacing={1.2} className="!mt-4">
         Width
       </Typography>
       <Slider
-        size="small"
+        size="large"
         value={strokeWidth}
         aria-label="Small"
         valueLabelDisplay="auto"
