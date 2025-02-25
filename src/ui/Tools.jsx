@@ -1,6 +1,5 @@
 import React from "react";
 import { FaEraser, FaPencilAlt } from "react-icons/fa";
-import { GiSpray } from "react-icons/gi";
 import { usePaintContext } from "../context/PaintContext";
 import { Button, Slider, Typography } from "@mui/material";
 import Colors from "./Colors";
